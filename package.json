@@ -1,0 +1,27 @@
+{
+  "name": "ci-tdd-api",
+  "version": "1.0.0",
+  "description": "restful API built using Test-First development &amp; Continuous Integration with Travis-CI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMunkyDev/ci-tdd-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMunkyDev/ci-tdd-api/issues"
+  },
+  "homepage": "https://github.com/CMunkyDev/ci-tdd-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mocha": "^4.1.0"
+  }
+}
