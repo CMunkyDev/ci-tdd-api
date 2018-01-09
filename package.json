@@ -4,7 +4,7 @@
   "description": "restful API built using Test-First development &amp; Continuous Integration with Travis-CI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",

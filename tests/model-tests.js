@@ -2,7 +2,7 @@ let Chai = require('chai')
 let expect = Chai.expect
 
 let headlines = require('../models').headlines
-console.log(headlines)
+
 describe('Headlines Model', function () {
     it(`Should have an 'all' method`, function () {
         expect(headlines.all).to.be.ok
