@@ -1,3 +1,3 @@
 module.exports = {
-    headlines: require('./headlines')
+    stories: require('./stories')
 }

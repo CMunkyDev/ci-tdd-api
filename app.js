@@ -4,14 +4,14 @@ const PORT = process.env.port || 8000
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const {
-    headlines: headlineRouter
+    stories: storiesRouter
 } = require('./routes')
 
 app.disable('x-powered-by')
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use('/headlines', headlineRouter)
+app.use('/stories', storiesRouter)
 
 app.use((req, res, next) => {
     next({status: 404, message: 'Not Found'})
@@ -25,3 +25,4 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
 
+module.exports = app
