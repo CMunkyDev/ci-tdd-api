@@ -21,7 +21,7 @@ module.exports = name => {
         }
 
         static create(req, res, next) {
-            Model.make(req.body).then(response => {
+            Model.create(req.body).then(response => {
                 res.status(201).json({
                     [name]: response
                 })
@@ -29,7 +29,7 @@ module.exports = name => {
         }
 
         static update(req, res, next) {
-            Model.alter(req.params.id, req.body).then(response => {
+            Model.update(req.params.id, req.body).then(response => {
                 res.json({
                     [name]: response
                 })
