@@ -37,7 +37,7 @@ module.exports = name => {
         }
 
         static delete(req, res, next) {
-            Model.destroy(req.params.id).then(response => {
+            Model.delete(req.params.id).then(response => {
                 res.json({
                     [name]: response
                 })

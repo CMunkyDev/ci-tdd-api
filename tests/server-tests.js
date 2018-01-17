@@ -96,7 +96,6 @@ describe ('Route Tests' , function () {
     })
 
     describe('PUT /stories', function () {
-        beforeEach(reseedStories)
         let putHeadline = 'PUT test headline'
         let putAuthor = 'PUT test author'
         let putContent = 'PUT test content'
@@ -117,6 +116,45 @@ describe ('Route Tests' , function () {
                     expect(response.body.stories).to.haveOwnProperty('content')
                     expect(response.body.stories.content).to.equal(putContent)
                 })
+        })
+    })
+
+    describe('DELETE /stories', function () {
+        it('returns the deleted object', function () {
+            return request(app)
+                .delete('/stories/1')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .then(response => {
+                    expect(response.body.stories).to.be.an('object')
+                    expect(response.body.stories).to.haveOwnProperty('id')
+                    expect(response.body.stories.id).to.equal(1)
+                    expect(response.body.stories).to.haveOwnProperty('headline')
+                    expect(response.body.stories.headline).to.equal(headline + 1)
+                    expect(response.body.stories).to.haveOwnProperty('author')
+                    expect(response.body.stories.author).to.equal(author + 1)
+                    expect(response.body.stories).to.haveOwnProperty('content')
+                    expect(response.body.stories.content).to.equal(content + 1)
+                })
+        })
+        it('actually deletes the story with the passed id', function () {
+            return request(app)
+                .delete('/stories/1')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .then(response => {
+                    return request(app)
+                        .get('/stories')
+                        .expect('Content-Type', /json/)
+                        .expect(200)
+                        .then(response => {
+                            expect(response.body.stories).to.be.an('array')
+                            expect(response.body.stories).to.have.length(1)
+                            expect(response.body.stories[0]).to.haveOwnProperty('id')
+                            expect(response.body.stories[0].id).to.equal(2)
+                        })
+                })
+                
         })
     })
 })
