@@ -4,7 +4,7 @@
   "description": "restful API built using Test-First development &amp; Continuous Integration with Travis-CI",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests",
+    "test": "mocha tests --exit",
     "test-clean": "mocha tests --nostack",
     "knex": "knex",
     "start": "node app.js"
@@ -34,5 +34,6 @@
     "sentencer": "^0.1.5",
     "supertest": "^3.0.0",
     "yargs": "^10.1.1"
-  }
+  },
+  "devDependencies": {}
 }
