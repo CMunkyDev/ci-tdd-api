@@ -1,8 +1,8 @@
 language: node_js
 node_js:
- - "node"
+  - "node"
 
- services:
+services:
   - postgresql
-  before_script:
-  - psql -c 'create database news_dev;' -U postgres
+before_script:
+  - psql -c "CREATE DATABASE news_dev;" -U postgres
