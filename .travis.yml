@@ -6,3 +6,4 @@ services:
   - postgresql
 before_script:
   - psql -c "CREATE DATABASE news_dev;" -U postgres
+  - npm run knex migrate:latest
